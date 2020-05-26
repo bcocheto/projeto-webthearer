@@ -4,46 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300"
       rel="stylesheet"
       type="text/css"
-      href="{{url_for('static', filename='/css/bootstrap.min.css')}}"
     />
+    <link
+      href="{{url_for('static', filename='/css/bootstrap.css')}}"
+      rel="stylesheet"
+    />
+    <link href="{{url_for('static', filename="/css/style.css")}}"
+    rel="stylesheet"/>
     <script src="{{url_for('static', filename='/js/jquery-3.5.1.min.js')}}"></script>
-    <script src="{{url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/js/bootstrap.js')}}"></script>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{{url_for('home')}}">Web Thearer</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="true"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('home')}}"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('category')}}">Categorias</a>
-          </li>
-          <li class="nav-item"></li>
-        </ul>
+    <header>
+      <div class="row">
+        <div style="padding: 2%; margin: 1%;">
+          <a href="{{url_for('home')}}" class="btn">Home</a>
+          <a href="{{url_for('category')}}" class="btn">Categorias</a>
+        </div>
       </div>
-    </nav>
+    </header>
 
     {% block body %}{% endblock %}
 
-    <footer class="navbar fixed-bottom" class="page-footer font-small blue">
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:</div>
+    <footer class="fixed-bottom page-footer font-small" style="color: #90a4ae;">
+      <div class="footer-copyright text-center py-3">
+        Breno Cocheto © 2020 Copyright:
+      </div>
     </footer>
   </body>
 </html>
