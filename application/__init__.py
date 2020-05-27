@@ -9,3 +9,4 @@ app = Flask(
 
 from application.controller import home_controller
 from application.controller import category_controller
+from application.controller import sub_category
