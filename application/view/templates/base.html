@@ -20,17 +20,29 @@
 
   <body>
     <header>
-      <div class="row">
-        <div style="padding: 2%; margin: 1%;">
-          <a href="{{url_for('home')}}" class="btn">Home</a>
-          <a href="{{url_for('category')}}" class="btn">Categorias</a>
-        </div>
+      <div class="wrap">
+        <nav>
+          <ul class="primary">
+            <li>
+              <a href="{{url_for('home')}}">Home</a>
+            </li>
+
+            <li>
+              <a href="">Categorias</a>
+              <ul class="sub">
+                <li><a href="{{url_for('category')}}">Categoria 1</a></li>
+                <li><a href="{{url_for('category')}}">Categoria 2</a></li>
+                <li><a href="{{url_for('category')}}">Categoria 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     {% block body %}{% endblock %}
 
-    <footer class="fixed-bottom page-footer font-small" style="color: #90a4ae;">
+    <footer class="fixed-bottom page-footer font-small">
       <div class="footer-copyright text-center py-3">
         Breno Cocheto © 2020 Copyright:
       </div>
