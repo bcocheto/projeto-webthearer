@@ -30,9 +30,11 @@
             <li>
               <a href="">Categorias</a>
               <ul class="sub">
-                <li><a href="{{url_for('category')}}">Categoria 1</a></li>
-                <li><a href="{{url_for('category')}}">Categoria 2</a></li>
-                <li><a href="{{url_for('category')}}">Categoria 3</a></li>
+                {%for i in categories%}
+                <li>
+                  <a href="/category/{{ i.getId() }}">{{i.getName()}}</a>
+                </li>
+                {%endfor%}
               </ul>
             </li>
           </ul>

@@ -1,43 +1,28 @@
 {%extends 'base.html'%} {%block body%}
 <div class="row">
-  <div style="margin-top: 10%;">
-    <div class="box">
-      <div class="card2">
-        <div class="imgBx">
-          <img
-            src="https://s2.glbimg.com/nksCDlmBan7iiSCgJqZdN7A5ekc=/e.glbimg.com/og/ed/f/original/2019/10/22/6th-place_small-white-hair-spider_javier-ruperez_nikon-small-world.jpg"
-            alt="images"
-          />
-        </div>
-        <div class="details">
-          <h2>Video<br /><span>1</span></h2>
-        </div>
-      </div>
-
-      <div class="card2">
-        <div class="imgBx">
-          <img
-            src="https://i.pinimg.com/originals/e4/34/2a/e4342a4e0e968344b75cf50cf1936c09.jpg"
-            alt="images"
-          />
-        </div>
-        <div class="details">
-          <h2>Video<br /><span>2</span></h2>
-        </div>
-      </div>
-
-      <div class="card2">
-        <div class="imgBx">
-          <img
-            src="https://img.freepik.com/vetores-gratis/imagens-animadas-abstratas-neon-lines_23-2148344065.jpg?size=626&ext=jpg"
-            alt="image"
-          />
-        </div>
-        <div class="details">
-          <h2>Video<br /><span>3</span></h2>
-        </div>
-      </div>
-    </div>
+  <div class="box">
+    <h1>{{category.getName()}}</h1>
+    <h3>{{category.getDescription()}}</h3>
   </div>
 </div>
-{%endblock%}
+<div class="row">
+  <div style="margin-top: 10%;">
+    <div class="box">
+      {%for i in movie%}
+      <div class="card2">
+        <div class="imgBx">
+          <a
+            href="{{url_for('movie', idCategory = category.getId(), idMovie=movie.getId())}}"
+          >
+            <img src="/static/movies{{i.getThumb()}}" alt="images" />
+          </a>
+        </div>
+        <div class="details">
+          <h2>{{i.getName()}}<br /><span>{{i.getLike}}</span></h2>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+  {%endblock%}
+</div>
